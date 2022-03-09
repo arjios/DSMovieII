@@ -1,16 +1,11 @@
 package com.devsuperior.dsmovieII.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,16 +20,7 @@ public class Movie implements Serializable {
 	private Double score;
 	private Integer count;
 	private String image;
-	
-    @ManyToMany
-    @JoinTable(
-        name = "tb_score",
-        joinColumns = @JoinColumn(name = "movie_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
-    )
-	List<User> users = new ArrayList<>();
-	
-	
+
 	public Movie() {
 	}
 
